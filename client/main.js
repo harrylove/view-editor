@@ -1,11 +1,14 @@
 Template.test.text = function() {
 
-    var view = [];
-
-    //var link = Template['a'].withData({ id:'id', className:'class', href:'#', text:'my text' });
-    var link = Template['a']({ id:'id', class:'class', href:'#', text:'my text' });
-
-    view.push(link);
+    var view = [
+	Template.a({ id:'id', class:'class', href:'#', text:'my text' }),
+	Template.p({ text: [
+		     Template.a({ text: 'hi there' }),
+		     ' ',
+	    Template.span({ text: 'okay' })].join('')
+		   }),
+	Template.p({ text: 'another paragraph' })
+    ].join('');
 
     return view;
 };

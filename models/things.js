@@ -1,6 +1,6 @@
-Views = new Meteor.Collection('views');
+Things = new Meteor.Collection('things');
 
-Views.allow({
+Things.allow({
     insert: function (userId, doc) {
         //return (userId && doc.userId === userId);
         return true;
